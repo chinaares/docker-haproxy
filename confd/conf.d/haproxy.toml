@@ -1,8 +1,7 @@
 [template]
 prefix = "haproxy-discover"
 keys = [
-  "services",
-  "tcp-services"
+  "services"
 ]
 
 owner = "haproxy"
