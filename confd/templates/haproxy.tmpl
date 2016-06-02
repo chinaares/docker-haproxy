@@ -29,7 +29,8 @@ defaults
 
 frontend http-in
     bind *:8080
-  
+    bind-process 1
+
     {{range $service := ls "/services"}}
     
     {{$key := printf "/services/%s/domain" $service}}  {{if exists $key}}
@@ -57,6 +58,7 @@ backend {{$service}}
 listen MyStats
     mode http
     bind 0.0.0.0:9000
+    bind-process 2
     stats enable
     stats uri /
     stats refresh 5s

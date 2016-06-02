@@ -13,7 +13,7 @@ ENV ETCD_NODE 172.17.42.1:4001
 ENV CONFD_VERSION 0.11.0
 
 # Install HAProxy
-RUN apk-install haproxy bash curl rsyslog
+RUN apk-install haproxy bash curl rsyslog libnl3
 
 # Install Confd
 ADD https://github.com/kelseyhightower/confd/releases/download/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64 \
