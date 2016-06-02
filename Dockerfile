@@ -12,17 +12,9 @@ MAINTAINER LeavyLip <dev@leavylip.com>
 ENV ETCD_NODE 172.17.42.1:4001
 ENV CONFD_VERSION 0.11.0
 
-RUN apk update
-RUN apk add --no-cache rsyslog
-# Install iproute2 ('tc' command)
-RUN apk add iproute2
-# Install libnl3 ('nl-qdisc-add' command) 
-RUN apk add libnl3
 # Install HAProxy
-RUN apk-install haproxy bash curl 
+RUN apk-install haproxy bash curl libnl3 
 
-# Purge APK cache 
-RUN rm -rf /var/cache/apk/*
 # Install Confd
 ADD https://github.com/kelseyhightower/confd/releases/download/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64 \
 	/bin/confd

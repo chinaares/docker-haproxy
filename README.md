@@ -25,7 +25,7 @@ ETCD_NODE=192.166.69.38:2379
 
 Interactive:
 
-docker run -it --rm -e ETCD_NODE=$ETCD_NODE cnares/docker-haproxy /bin/bash
+docker run -it --rm -e ETCD_NODE=$ETCD_NODE -v /dev/log:/dev/log cnares/docker-haproxy /bin/bash
 
 Non-interactive:
 
