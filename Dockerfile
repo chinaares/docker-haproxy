@@ -5,7 +5,7 @@
 #   https://hub.docker.com/r/jihchi/alpine-confd/
 
 # Use the minimal alpine base image
-FROM gliderlabs/alpine:3.2
+FROM gliderlabs/alpine:3.3
 MAINTAINER LeavyLip <dev@leavylip.com>
 
 # Set configuration variables
